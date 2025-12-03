@@ -25,3 +25,17 @@ function getComputerChoice(){
     }
 }
 console.log(getComputerChoice())
+
+function getHumanChoice(){
+    let y = prompt();
+
+    if (y = "rock"){
+        return "rock";
+    } else if (y = "paper"){
+        return "paper";
+    } else if (y = "scissors"){
+        return "scissors";
+    }
+}
+console.log(getHumanChoice())
+
