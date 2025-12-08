@@ -28,14 +28,19 @@ console.log(getComputerChoice())
 
 function getHumanChoice(){
     let y = prompt();
-
-    if (y = "rock"){
+    y = y.toLowerCase();
+    if (y === "rock"){
         return "rock";
-    } else if (y = "paper"){
+    } else if (y === "paper"){
         return "paper";
-    } else if (y = "scissors"){
+    } else if (y === "scissors"){
         return "scissors";
     }
 }
 console.log(getHumanChoice())
+
+var = humanScore
+
+var = computerScore
+//if computer wins return//
 
