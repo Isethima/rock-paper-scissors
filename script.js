@@ -11,7 +11,7 @@ function getComputerChoice(){
         return "scissors";
     }
 }
-const computerChoice = getComputerChoice();
+var computerChoice = getComputerChoice();
 console.log(computerChoice);
 
 function getHumanChoice(){
@@ -25,7 +25,7 @@ function getHumanChoice(){
         return "scissors";
     }
 }
-const humanChoice = getHumanChoice();
+var humanChoice = getHumanChoice();
 console.log(humanChoice);
 
 //if humanChoice is rock and computerChoice is rock return draw//
@@ -44,32 +44,52 @@ var computerScore = 0
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice == "rock" && computerChoice == "rock"){
-        return "draw";
+        return "Draw, please play again.";
     } else if (humanChoice == "paper" && computerChoice == "rock"){
         humanScore++
-        return "win";
+        return "Winner! Paper covers rock.";
     } else if (humanChoice == "scissors" && computerChoice == "rock"){
         computerScore++
-        return "lose";
+        return "Loser! Rock crushes scissors.";
     } else if (humanChoice == "rock" && computerChoice == "paper"){
         computerScore++
-        return "lose";
+        return "Loser! Paper covers rock.";
     } else if (humanChoice == "paper" && computerChoice == "paper"){
-        return "draw";
+        return "Draw, please play again.";
     } else if (humanChoice == "scissors" && computerChoice == "paper"){
         humanScore++
-        return "win";
+        return "Winner! Scissors cuts paper.";
     } else if (humanChoice == "rock" && computerChoice == "scissors"){
         humanScore++
-        return "win";
+        return "Winner! Rock crushes scissors.";
     } else if (humanChoice == "paper" && computerChoice == "scissors"){
         computerScore++
-        return "lose";
+        return "Loser! Scissors cuts paper.";
     } else if (humanChoice == "scissors" && computerChoice == "scissors"){
-        return "draw";
+        return "Draw, please play again.";
     }
 }
 console.log(playRound(humanChoice, computerChoice));
 console.log(humanScore, computerScore);
+
+function playGame(){
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
+        playRound(humanChoice, computerChoice);
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
+        playRound(humanChoice, computerChoice);
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
+        playRound(humanChoice, computerChoice);
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
+        playRound(humanChoice, computerChoice);
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
+        playRound(humanChoice, computerChoice);
+    return {human: humanScore, computer: computerScore};
+}
+console.log(playGame());
 
 
